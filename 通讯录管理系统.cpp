@@ -59,25 +59,27 @@ void add(book* abc)
 		system("cls");
 	}
   }
+//
 void reveal(book* abc)
 {
 	if (abc->size == 0)
 	{
 		cout << "当前记录为空" << endl;
-		system("pauce");
+		system("pause");
 		system("cls");
 	}
 	else
 	{
 		for (int i = 0; i < abc->size; i++)
 		{
-			cout << "/t姓名；" << abc->m[i].name << "/t性别：" << (abc->m[i].sex==1?"男":"女")<< "电话：" << abc->m[i].phone << endl;
-			system("pauce");
+			cout << "\t姓名；" << abc->m[i].name << "\t性别：" << (abc->m[i].sex==1?"男":"女")<< "\t电话：" << abc->m[i].phone << endl;
+			system("pause");
 			system("cls");
 		}
 
 	}
 }
+//
 int isexist(book* abc, string name)
 {
 	for (int i = 0; i < abc->size; i++)
@@ -87,6 +89,102 @@ int isexist(book* abc, string name)
 			return i;
 		}
 	}
+	return -1;
+}
+void D(book* abc)
+{
+	cout << "请输入要删除的联系人：" << endl;
+			   string name;
+			   cin >> name;
+			   int ret = isexist(abc, name);
+			   if(ret!=-1)
+			   {
+				   for (int i = ret; i < abc->size; i++)
+				   {
+					  abc->m[i] =abc->m[i + 1];
+				   }
+				  abc->size--;
+				   cout << "删除成功" << endl;
+				   system("pause");
+				} 
+			   else
+			   {
+				   cout << "查无此人" << endl;
+			   }
+			   system("pause");
+			   system("cls");
+}
+//
+void find(book* abc)
+{
+	cout << "请输入要查找的联系人" << endl;
+	string name;
+	cin >> name;
+	int ret = isexist(abc, name);
+	if (ret != -1)
+	{
+		cout << "\t姓名；" << abc->m[ret].name << "\t性别：" << (abc->m[ret].sex == 1 ? "男" : "女") << "\t电话：" << abc->m[ret].phone << endl;
+		system("pause");
+	}
+	else
+	{
+		cout << "查无此人" << endl;
+	}
+	system("pause");
+	system("cls");
+}
+//
+void M(book* abc)
+{
+	cout << "请输入要修改的联系人" << endl;
+	string name;
+	cin >> name;
+	int i = isexist(abc, name);
+	if (i != -1)
+	{
+		string name;
+		cout << "请输入姓名：" << endl;
+		cin >> name;
+		abc->m[i].name = name;
+		cout << "请输入性别：" << "1--男" << "2--女" << endl;
+		int sex = 0;
+		while (true)
+		{
+			cin >> sex;
+			if (sex == 1 || sex == 2)
+			{
+				abc->m[i].sex = sex; break;
+			}
+			cout << "输入误请重新输入：" << endl;
+		}
+		string phone;
+		cout << "请输入电话号码：" << endl;
+		cin >> phone;
+		abc->m[i].phone = phone;
+		cout << "修改成功" << endl;
+	}
+	else cout << "查无此人" << endl;
+
+	system("pause");
+		system("cls");
+}
+//
+void clean(book* abc)
+{
+	cout << "\t是否要清空联系人" << "\t确认请按1" << "\t取消请按2"<<endl;
+	int i = 0;
+	cin >> i;
+	if (i==1)
+	{
+		abc->size = 0;
+		cout << "通讯录已清空" << endl;
+	}
+	else
+	{
+		cout << "操作已取消" << endl;
+	}
+	system("pause");
+	system("cls");
 }
 int main()
 {
@@ -102,24 +200,17 @@ int main()
 		{
 		case 1: add(&abc); break;
 		case 2:reveal(&abc); break;
+		case 3: D(&abc); break;
+		case 4:find(&abc); break;
+		case 5:M(&abc); break;
+		case 6:clean(&abc); break;
+		case 0:
 		{
-		case 3:cout << "请输入要删除的联系人：" << endl;
-			   string name;
-			   cin >> name;
-			   if (isexist(&abc, name) == -1)
-			   {
-				   cout << "查无此人" << endl;
-				}
-			   else
-			   {
-				   cout << "找到此人" << endl;
-			   }
-			   break;
+		   cout << "欢迎下次使用" << endl;
+		   system("pause");
+		   return 0;
+		   break;
 		}
-		case 4: break;
-		case 5: break;
-		case 6: break;
-		case 0:cout << "欢迎下次使用" << endl; break;
 		}
 	}
 	system("pause");
