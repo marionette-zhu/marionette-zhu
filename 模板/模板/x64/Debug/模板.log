@@ -1,0 +1,23 @@
+﻿  pdd.cpp
+  模板.cpp
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(31,1): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(100): message : 查看对正在编译的 类 模板 实例化“myarray<T>”的引用
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(31,34): error C2143: 语法错误: 缺少“,”(在“&”的前面)
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(14,3): error C3861: “this_”: 找不到标识符
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(42,3): error C2760: 语法错误:此处出现意外的“void”；应为“声明”
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(53,3): error C2760: 语法错误:此处出现意外的“void”；应为“声明”
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(65,11): error C3878: 语法错误: "id_expression" 后出现意外标记 "this"
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(65,11): message : 已跳过错误恢复:“this”
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(65,15): error C3878: 语法错误: "statement" 后出现意外标记 "->"
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(65,15): message : 已跳过错误恢复:“->”
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(63,3): error C2760: 语法错误:此处出现意外的“<id-expr>”；应为“声明”
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(68,3): error C2760: 语法错误:此处出现意外的“int”；应为“声明”
+C:\Users\gg\source\repos\模板\模板\myarray.hpp(73,3): error C2760: 语法错误:此处出现意外的“int”；应为“声明”
+C:\Users\gg\source\repos\模板\模板\模板.cpp(18,15): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\gg\source\repos\模板\模板\模板.cpp(19,15): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\gg\source\repos\模板\模板\模板.cpp(375,7): error C2084: 函数“void test16(void)”已有主体
+C:\Users\gg\source\repos\模板\模板\模板.cpp(359): message : 参见“test16”的前一个定义
+C:\Users\gg\source\repos\模板\模板\模板.cpp(450,9): error C2039: "push_back": 不是 "myarray<int>" 的成员
+C:\Users\gg\source\repos\模板\模板\模板.cpp(443): message : 参见“myarray<int>”的声明
+C:\Users\gg\source\repos\模板\模板\模板.cpp(477,2): error C2065: “test16”: 未声明的标识符
+  正在生成代码...
